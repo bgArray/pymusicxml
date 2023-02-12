@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE score-partwise PUBLIC
+        "-//Recordare//DTD MusicXML 4.0 Partwise//EN"
+        "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="4.0">
+    <work>
+        <work-number>D. 911</work-number>
+        <work-title>Winterreise</work-title>
+    </work>
+    <movement-number>22</movement-number>
+    <movement-title>Mut</movement-title>
+    <identification>
+        <creator type="composer">Franz Schubert</creator>
+        <creator type="poet">Wilhelm Müller</creator>
+        <rights>Copyright © 2001 Recordare LLC</rights>
+        <encoding>
+            <encoding-date>2002-02-16</encoding-date>
+            <encoder>Michael Good</encoder>
+            <software>Finale 2002 for Windows</software>
+            <encoding-description>MusicXML 1.0 example</encoding-description>
+        </encoding>
+        <source>Based on Breitkopf &amp; Härtel edition of 1895</source>
+    </identification>
+    <part-list>
+        <score-part id="P1">
+            <part-name>Singstimme.</part-name>
+        </score-part>
+        <score-part id="P2">
+            <part-name>Pianoforte.</part-name>
+        </score-part>
+    </part-list>
+</score-partwise>
