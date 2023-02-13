@@ -9,3 +9,5 @@ if __name__ == "__main__":
     osc = ObjectStateConstant()
     osc.set_console(logger.console)
     osc.dp(meta_ex)
+
+    # test_parse("./pymusicxml/resources/metaExample.musicxml")
