@@ -1,8 +1,13 @@
 import xmltojson
+
 import pathlib
-from typing import Union
+# import os
 
 from .exceptions import *
+from .schema import *
+
+from typing import Union
+from TrimLog import *
 
 
 def xml_to_json(file: Union[str, pathlib.Path], is_fragment: bool = True) -> dict:
@@ -37,10 +42,16 @@ def xml_to_json(file: Union[str, pathlib.Path], is_fragment: bool = True) -> dic
             )
 
             for i in second_line:
-                if i not in f_1:
+                if i not in f_1 and i != second_line[2]:
                     raise XmlFileError(
                         f"File {file} is not a musicxml file.\nPlease check your musicxml's headline."
                     )
+                elif i == second_line[2]:
+                    for j in schema_list:
+                        if j in i:
+                            break
+                    else:
+                        logger.warning("Your musicxml file missed a schema file.")
 
     with open(file, "r", encoding="utf-8") as f:
         xml = f.read()
@@ -63,3 +74,4 @@ if __name__ == "__main__":
     )
     result = xml_to_json(path)
     print(result["score-partwise"]["part-list"]["score-part"]["part-name"])
+    # print(os.listdir("./schema/"))

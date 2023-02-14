@@ -2,6 +2,8 @@ from .exceptions import *
 from .xml_to_json import xml_to_json
 from .json_to_xml import dict_to_xml
 
+from .schema import *
+
 from .xsdata_ import test_parse
 
 from TrimLog import *
