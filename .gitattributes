@@ -1,0 +1,9 @@
+*.yaml linguist-language=Python
+*.xml linguist-language=Python
+*.md linguist-language=Python
+*.xsd linguist-language=Python
+*.xsl linguist-language=Python
+*.dtd linguist-language=Python
+*.mod linguist-language=Python
+*.bat linguist-language=Python
+*.ent linguist-language=Python
