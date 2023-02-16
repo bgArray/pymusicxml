@@ -13,4 +13,6 @@ if __name__ == "__main__":
     osc.set_console(logger.console)
     osc.dp(meta_ex)
 
+    osc.dp(dict_to_xml(meta_ex))
+
     # test_parse("./pymusicxml/resources/metaExample.musicxml")
