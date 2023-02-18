@@ -47,6 +47,8 @@ def xml_to_json(file: Union[str, pathlib.Path], is_fragment: bool = True) -> dic
                         f"File {file} is not a musicxml file.\nPlease check your musicxml's headline."
                     )
                 elif i == second_line[2]:
+                    if i in f_1:
+                        break
                     for j in schema_list:
                         if j in i:
                             break
