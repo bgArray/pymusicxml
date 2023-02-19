@@ -1,6 +1,8 @@
 from .exceptions import *
 from .xml_to_json import xml_to_json
-from .json_to_xml import dict_to_xml
+from .dict_to_xml import dict_to_xml
+
+from .dict_to_xml import jsonToXML
 
 from .schema import *
 
