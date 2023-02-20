@@ -24,3 +24,5 @@ if __name__ == "__main__":
         )
 
     # test_parse("./pymusicxml/resources/metaExample.musicxml")
+
+    mxf = MusicxmlFile("b.musicxml")
