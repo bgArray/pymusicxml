@@ -23,8 +23,8 @@ if __name__ == "__main__":
     #         )
     #     )
 
-    print(BaseTag(meta_ex).attr)
-    print(convertor(meta_ex))
+    # print(BaseTag(meta_ex).attr)
+    print(convertor(meta_ex)["score-partwise"])
 
     # test_parse("./pymusicxml/resources/metaExample.musicxml")
 

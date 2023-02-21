@@ -2,11 +2,9 @@ from .exceptions import *
 from .xml_to_json import xml_to_json
 from .dict_to_xml import dict_to_xml
 
-from .dict_to_xml import jsonToXML
-
 from .schema import *
 
-from .xsdata_ import test_parse
+from .base_tag import BaseTag, convertor
 
 from TrimLog import *
 
@@ -14,5 +12,5 @@ logger.license_shower(
     "xml_operate",
     "Apache-2.0",
     "Copyright 2023 bgArray",
-    "v0.0.1"
+    "v0.1.2"
 )
