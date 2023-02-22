@@ -3,7 +3,7 @@ from typing import Union
 
 from TrimLog import *
 
-logger.license_shower("dict_to_xml", "MIT", "Copyright 2023 bgArray", "v0.4.0")
+logger.license_shower("dict_to_xml", "MIT", "Copyright © 2023 bgArray", "v0.4.0")
 
 VERSION = "0.4.0"
 

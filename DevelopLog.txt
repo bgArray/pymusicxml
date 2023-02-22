@@ -1,2 +1,5 @@
 2023/2/10 "update 2023/2/10 start_update" [bgArray]
 开始更新，把库框架整理好。
+
+2023/2/22 "update 2023/2/22 xml class release2.0 update!" [bgArray]
+xml操作库完全写完，包含完整的文件流操作以及面向BaseTag的操作

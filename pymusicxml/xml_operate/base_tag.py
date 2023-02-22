@@ -34,6 +34,20 @@ class BaseTag(dict):
                     self.text = trans[i]
                     self.pop(i)
 
+    def trans_to_dict(self) -> dict:
+        if self.attr.__len__() != 0:
+            for i in self.attr:
+                new_i = dict(i)
+                for j in list(new_i.keys()):
+                    new_i["@" + j] = new_i.pop(j)
+                self_ = dict(self)
+                self.clear()
+                self.update(new_i)
+                self.update(self_)
+        if self.text != "":
+            self.update({"#text": self.text})
+        return dict(self)
+
     def __repr__(self):
         if self.attr.__len__() == 0 and self.text == "" and self.__len__() != 0:
             return "BaseTag({})".format(super().__repr__())
@@ -62,3 +76,32 @@ def convertor(in_dict: dict) -> BaseTag:
                 else:
                     pass
     return BaseTag(in_dict)
+
+
+# convert base_tag to dict
+def restorer(in_base: BaseTag) -> dict:
+    for i in list(in_base.keys()):
+        if isinstance(in_base[i], BaseTag):
+            in_base[i] = restorer(in_base[i])
+        elif isinstance(in_base[i], list):
+            for j in range(in_base[i].__len__()):
+                if isinstance(in_base[i][j], BaseTag):
+                    in_base[i][j] = restorer(in_base[i][j])
+                else:
+                    pass
+    return in_base.trans_to_dict()
+
+
+def detector(in_base: BaseTag) -> None:
+    # recursive base_tag
+    for i in list(in_base.keys()):
+        if isinstance(in_base[i], BaseTag):
+            detector(in_base[i])
+        elif isinstance(in_base[i], list):
+            for j in range(in_base[i].__len__()):
+                if isinstance(in_base[i][j], BaseTag):
+                    detector(in_base[i][j])
+                else:
+                    pass
+        elif isinstance(in_base[i], dict):
+            print("error: {}".format(in_base[i]))
