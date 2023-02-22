@@ -7,3 +7,6 @@
 *.mod linguist-language=Python
 *.bat linguist-language=Python
 *.ent linguist-language=Python
+*.xpr linguist-language=Python
+*.spp linguist-language=Python
+*.html linguist-language=Python
