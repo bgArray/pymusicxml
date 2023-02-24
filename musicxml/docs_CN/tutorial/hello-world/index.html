@@ -101,15 +101,17 @@
     &quot;Hello World&quot; in MusicXML
 </p>
 
-<h1>&quot;Hello World&quot; in MusicXML</h1>
+<h1>&quot;Hello World&quot; in MusicXML（musicxml的入门）</h1>
 
-<p>Brian Kernighan and Dennis Ritchie popularized the practice of writing a program that prints the words "hello, world" as the first program to write when learning a new programming language. It is the minimal program that tests how to build a program and display its results.</p>
+<p>
+Brian Kernighan和Dennis Ritchie推广了编写一个打印“hello，world”字样的程序的做法，这是学习新编程语言时编写的第一个程序。它是测试如何构建程序并显示其结果的最小程序。</p>
 
-<p>In MusicXML, a song with the lyrics "hello, world" is actually more complicated than we need for a simple MusicXML file. Let us keep things even simpler: a <a href="../../musicxml-reference/examples/tutorial-hello-world/">one-measure piece of music</a> that contains a whole note on middle C, based in 4/4 time:</p>
+<p>在MusicXML中，一首歌词为“hello，world”的歌曲实际上比我们需要的简单MusicXML文件要复杂得多。
+    让我们让事情变得更简单： 一段 <a href="../../musicxml-reference/examples/tutorial-hello-world/">一小节的音乐</a> 有一个中央C的全音符, 且为44拍:</p>
 
 <p><img src="../../static/tutorial/hello-world.png" /></p>
 
-<p>Here it is in MusicXML:</p>
+<p>他的MusicXML如下:</p>
 
 <p><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 &lt;!DOCTYPE score-partwise PUBLIC
@@ -149,25 +151,29 @@
   &lt;/part&gt;
 &lt;/score-partwise&gt;</pre></p>
 
-<p>Let's look at each element in turn:</p>
+<p>让我们依次查看每个元素：</p>
 
 <p><pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</pre></p>
 
-<p>This is the XML declaration required of all XML documents. We have specified that the characters are written in the Unicode encoding UTF-8. This encoding provides backwards compatibility with ASCII.</p>
+<p>这是所有XML文档所需的XML声明。我们已指定字符以Unicode编码UTF-8编写。此编码提供了与ASCII的向后兼容性。</p>
 
 <p><pre>&lt;!DOCTYPE score-partwise PUBLIC
     "-//Recordare//DTD MusicXML 4.0 Partwise//EN"
     "http://www.musicxml.org/dtds/partwise.dtd"&gt;</pre></p>
 
-<p>This is the document type declaration for applications that use XML Document Type Definitions (DTDs). It lets those applications know this is a MusicXML file. When using a document type declaration, we also set the value of standalone to "no" in the XML declaration since we are defining the document with an external definition in another file.</p>
+<p>这是使用XML文档类型定义（DTD）的应用程序的文档类型声明。它让这些应用程序知道这是一个MusicXML文件。
+    当使用文档类型声明时，我们还在XML声明中将standalone的值设置为“no”，因为我们在另一个文件中使用外部定义定义文档。</p>
 
-<p>The MusicXML DTDs are deprecated as of Version 4.0 in favor of the W3C XML Schema Definition (XSD). However there are still applications using DTDs. When writing MusicXML files, writing the document type declaration makes it easier for all applications - XSD or DTD based - to validate MusicXML files.</p>
+<p>从4.0版开始，MusicXML DTD被弃用，取而代之的是W3C XML模式定义（XSD）。然而，仍有应用程序使用DTD。编写MusicXML文件时，编写文档类型声明使所有应用程序（基于XSD或DTD）更容易验证MusicXML文档。</p>
 
-<p>This public document type declaration includes an Internet location for the DTD. The URL in this declaration is just for reference. Most applications will know that they are expecting a MusicXML file and will want to validate against their own local copy of the MusicXML schemas. Use MusicXML's <a href="../../listings/catalog.xml/">XML catalog</a> to validate against the local copy, rather than reading the XSD or DTD definitions slowly over the network.</p>
+<p>此公共文档类型声明包括DTD的Internet位置。此声明中的URL仅供参考。大多数应用程序都知道他们需要MusicXML文件，
+    并希望根据自己的MusicXML模式本地副本进行验证。使用MusicXML的<a href="../../listings/catalog.xml/">
+        XML 目录</a> 根据本地副本进行验证，而不是通过网络缓慢读取XSD或DTD定义。</p>
 
 <p><pre>&lt;score-partwise version="4.0"&gt;</pre></p>
 
-<p>This is the root document type. The <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a> element is made up of parts, where each part is made up of measures. There is also a <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>
+<p>这是根文档类型。 <a href="../../musicxml-reference/elements/score-partwise/">&lt;score-partwise&gt;</a> 元素
+    是由Part组成的，其中每个Part都是由小节组成的。 There is also a <a href="../../musicxml-reference/elements/score-timewise/">&lt;score-timewise&gt;</a> option which is made up of measures, where each measure is made up of parts. The version attribute lets programs distinguish what version of MusicXML is being used more easily. Leave it out if you are writing MusicXML 1.0 files.</p>
 
 <p><pre>  &lt;part-list&gt;
     &lt;score-part id="P1"&gt;
