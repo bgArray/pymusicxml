@@ -309,58 +309,52 @@
         <pre>        &lt;duration&gt;4&lt;/duration&gt;</pre>
         </p>
 
-        <p>Our divisions value is 1 division per quarter note, so the duration of 4 is the length of 4 quarter
-            notes.</p>
+        <p>我们的divisions值为四分音符1 division, 所以4的持续时间（duration）是4个四分音符的长度。</p>
 
-        <p>The &lt;duration&gt; element should reflect the intended duration, not a longer or shorter duration specific
-            to a certain performance. The <a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a> element has
-            attack and release attributes specify how to change a note's start and stop times from the times represented
-            through a sequence of durations.</p>
+        <p>&lt;duration&gt; 元素应当反映出预期的持续时间，而非在实际的特定演奏中的一个或长或短的（实际的）持续时间。
+            <a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a> 元素有
+            具有attack和release属性，用于指定如何从一系列持续时间表示的时间的音符中更改音符的开始和停止时间。</p>
 
         <p>
         <pre>        &lt;type&gt;whole&lt;/type&gt;</pre>
         </p>
 
-        <p>The <a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> element tells us that this is notated
-            as a whole note. You could probably derive this from the duration in this case, but it is easier to work
-            with both notation and performance applications if the notation and performance data is represented
-            separately.</p>
+        <p><a href="../../musicxml-reference/elements/type/">&lt;type&gt;</a> 元素告诉我们，这是作为一个全音符标记的。
+            在这种情况下，您可能会从持续时间中得出这一点，但如果乐谱音符类型和持续时间是分开表示的，那么使用打谱程序和演奏程序会更容易读取想要
+            的数据。</p>
 
-        <p>The order in which these elements appear does matter. In the &lt;note&gt; element, the &lt;pitch&gt; element
-            must precede the &lt;duration&gt; element, and the &lt;type&gt; element must come afterwards. The correct
-            order is specified throughout the documentation.</p>
+        <p>这些元素的出现顺序很重要。 在&lt;note&gt;元素中， &lt;pitch&gt;元素
+            必须出现在&lt;duration&gt;元素之前，&lt;type&gt; 元素必须在其后。 文档中规定了正确的顺序。</p>
 
-        <p>One limitation of XML's document type definitions is that if you want to limit the number of elements within
-            another element, you generally must also restrict how they are ordered. In the attributes, for instance, we
-            want no more than one &lt;divisions&gt; element. For the note's pitch, we want one and only one &lt;step&gt;
-            element and &lt;octave&gt; element. In order to do this, the order in which these elements appear must be
-            constrained as well.</p>
+        <p>XML文档类型定义的一个限制是，如果要限制另一个元素中的元素数量，通常还必须限制它们的排序方式。
+            例如，在属性中，我们只需要一个&lt;divisions&gt;元素。 对于音符的音高，我们只需要一个&lt;step&gt;和&lt;octave&gt;元素。
+            为了做到这一点，这些元素的出现顺序也必须受到约束。</p>
 
         <p>
         <pre>      &lt;/note&gt;</pre>
         </p>
 
-        <p>We are done with the note.</p>
+        <p>note（音符）定义结束。</p>
 
         <p>
         <pre>    &lt;/measure&gt;</pre>
         </p>
 
-        <p>We are done with the measure.</p>
+        <p>measure（小节）定义结束。</p>
 
         <p>
         <pre>  &lt;/part&gt;</pre>
         </p>
 
-        <p>We are done with the part.</p>
+        <p>Part定义结束。</p>
 
         <p>
         <pre>&lt;/score-partwise&gt;</pre>
         </p>
 
-        <p>And we are done with the score.</p>
+        <p>谱面定义结束。</p>
 
-        <p>Next: <a href="../structure-of-musicxml-files/">The Structure of MusicXML Files</a>
+        <p>下一节：<a href="../structure-of-musicxml-files/">MusicXML文件的结构</a>
 
     </main>
 </div>

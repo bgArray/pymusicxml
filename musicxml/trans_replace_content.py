@@ -33,15 +33,15 @@ replace_dict = {
     'musicxml-reference/examples/">Examples</a></li>':
         'musicxml-reference/examples/">示例</a></li>',
 
-    'container-reference/">Container Reference</a></b></li>':
-        'container-reference/">Container（容器） 参考</a></b></li>',
+    '/">Container Reference</a></b></li>':
+        '/">Container（容器） 参考</a></b></li>',
     'container-reference/elements/">Elements</a></li>':
         'container-reference/elements/">元素</a></li>',
     'container-reference/examples/">Examples</a></li>':
         'container-reference/examples/">示例</a></li>',
 
-    'opus-reference/">Opus Reference</a></b></li>':
-        'opus-reference/">Opus（作品） 参考</a></b></li>',
+    '/">Opus Reference</a></b></li>':
+        '/">Opus（作品） 参考</a></b></li>',
     'opus-reference/elements/">Elements</a></li>':
         'opus-reference/elements/">元素</a></li>',
     'opus-reference/data-types/">Data Types</a></li>':
@@ -49,8 +49,8 @@ replace_dict = {
     'opus-reference/examples/">Examples</a></li>':
         'opus-reference/examples/">示例</a></li>',
 
-    'sounds-reference/">Sounds Reference</a></b></li>':
-        'sounds-reference/">Sounds（声音） 参考</a></b></li>',
+    '/">Sounds Reference</a></b></li>':
+        '/">Sounds（声音） 参考</a></b></li>',
     'sounds-reference/elements/">Elements</a></li>':
         'sounds-reference/elements/">元素</a></li>',
     'sounds-reference/data-types/">Data Types</a></li>':
@@ -60,13 +60,13 @@ replace_dict = {
 
     '/">Elements</a></li>':
         '/">元素</a></li>',
-    '/data-types/">Data Types</a></li>':
-        '/data-types/">数据类型</a></li>',
-    '/examples/">Examples</a></li>':
-        '/examples/">示例</a></li>',
+    'data-types/">Data Types</a></li>':
+        'data-types/">数据类型</a></li>',
+    'examples/">Examples</a></li>':
+        'examples/">示例</a></li>',
 
-    'listings/overview/">File Listings</a></b></li>':
-        'listings/overview/">文件列表</a></b></li>',
+    '/">File Listings</a></b></li>':
+        '/">文件列表</a></b></li>',
     '">Version History</a></b></li>':
         '">历史版本</a></b></li>',
 
