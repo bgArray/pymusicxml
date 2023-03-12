@@ -122,35 +122,33 @@
             MusicXML提供了两个XSLT样式表，可以在两种文档类型之间来回转换。
             <a href="../../listings/parttime.xsl/">parttime.xsl</a>样式表可以将&lt;score-partwise&gt;
             转换为&lt;score-timewise&gt;，与此同时<a href="../../listings/timepart.xsl/">timepart.xsl</a> 样式表
-           可以将&lt;score-timewise&gt;转换为&lt;score-partwise&gt;。</p>
+            可以将&lt;score-timewise&gt;转换为&lt;score-partwise&gt;。</p>
 
-        <p>An application reading MusicXML can choose which format is primary, and check for that document type. If it
-            is your root element, just proceed. If not, check to see if it is the other MusicXML root element. If so,
-            apply the appropriate XSLT stylesheet to create a new MusicXML document in your preferred format, and then
-            proceed. If it is neither of the two top-level document types, you do not have a MusicXML score, and can
-            return an appropriate error message.</p>
+        <p>阅读MusicXML的应用程序可以选择主要格式，并检查该文档类型。如果它是您的根元素，请继续。如果不是，请检查它是否是其他MusicXML根元素。
+            如果是，请应用适当的XSLT样式表以首选格式创建新的MusicXML文档，然后继续。如果这两种top-level文档类型都不是，
+            则您没有一个标准的MusicXML文档，可以返回相应的错误消息。</p>
 
-        <p>When your application writes to MusicXML, simply write to whichever format best meets your needs. Let the
-            program reading the MusicXML convert it if necessary.</p>
+        <p>当您的应用程序写入MusicXML时，只需写入最符合您需要的格式即可。如果需要，让读取MusicXML的程序对其进行转换。</p>
 
-        <p>In practice, most of today's MusicXML applications use the &lt;score-partwise&gt; format. If all else is
-            equal, that would be the format of choice for your application.</p>
+        <p>实际上，当今大多数MusicXML应用程序都使用&lt;score-partwise&gt;格式。
+            如果所有其他条件都相同，那么这将是应用程序的选择格式。</p>
 
-        <h2 id="top-level-elements">Top-Level Elements</h2>
+        <h2 id="top-level-elements">Top-Level 元素</h2>
 
-        <p>Each of the top-level formats contains a group of elements called the score header, followed by the musical
-            data. The only difference between the two formats is the way that the &lt;part&gt; and &lt;measure&gt;
-            elements are arranged. A &lt;score-partwise&gt; document contains one or more <a
-                    href="../../musicxml-reference/elements/part-partwise/">&lt;part&gt;</a> elements, and each &lt;part&gt;
-            element contains one or more <a
-                    href="../../musicxml-reference/elements/measure-partwise/">&lt;measure&gt;</a> elements. The &lt;score-timewise&gt;
-            document reverses the ordering of <a href="../../musicxml-reference/elements/measure-timewise/">&lt;measure&gt;</a>
-            and <a href="../../musicxml-reference/elements/part-timewise/">&lt;part&gt;</a> elements.</p>
+        <p>每一个top-level格式包含了一组称为score header（乐谱头信息）的元素，后面跟音乐数据。
+            两种格式的唯一区别是&lt;part&gt;和&lt;measure&gt;元素的记谱方式。
+            一个&lt;score-partwise&gt;类型的文档包含了一个或者更多的<a
+                    href="../../musicxml-reference/elements/part-partwise/">&lt;part&gt;</a> 元素， 并且每一个&lt;part&gt;
+            元素包含了一个或者更多的 <a
+                    href="../../musicxml-reference/elements/measure-partwise/">&lt;measure&gt;</a> 元素。
+            &lt;score-timewise&gt;
+            类型的文档对于 <a href="../../musicxml-reference/elements/measure-timewise/">&lt;measure&gt;</a>
+            和<a href="../../musicxml-reference/elements/part-timewise/">&lt;part&gt;</a> 元素的顺序正好颠倒过来。</p>
 
-        <p>In either case, the lower-level elements are filled with a group of elements referred to as music data. This
-            contains the actual music in the score, including zero or more of the following elements:
+        <p>在这种情况下，lower-level元素被一组称为music data（音乐数据）的元素填充。 这包含乐谱中的实际音乐，包括零个或多个以下元素：
+            （部分待翻译）</p>
         <ul>
-            <li><a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a></li>
+            <li><a href="../../musicxml-reference/elements/note/">&lt;note&gt;（音符）</a></li>
             <li><a href="../../musicxml-reference/elements/backup/">&lt;backup&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/forward/">&lt;forward&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/direction/">&lt;direction&gt;</a></li>
@@ -160,14 +158,13 @@
             <li><a href="../../musicxml-reference/elements/print/">&lt;print&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/sound/">&lt;sound&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/listening/">&lt;listening&gt;</a></li>
-            <li><a href="../../musicxml-reference/elements/barline/">&lt;barline&gt;</a></li>
+            <li><a href="../../musicxml-reference/elements/barline/">&lt;barline&gt;（小节线）</a></li>
             <li><a href="../../musicxml-reference/elements/grouping/">&lt;grouping&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/link/">&lt;link&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/bookmark/">&lt;bookmark&gt;</a></li>
         </ul>
-        </p>
 
-        <p>The score header may contain the following elements:
+        <p>score header（乐谱头信息）可能包含以下元素：（部分待翻译）</p>
         <ul>
             <li><a href="../../musicxml-reference/elements/work/">&lt;work&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/movement-number/">&lt;movement-number&gt;</a></li>
@@ -177,18 +174,15 @@
             <li><a href="../../musicxml-reference/elements/credit/">&lt;credit&gt;</a></li>
             <li><a href="../../musicxml-reference/elements/part-list/">&lt;part-list&gt;</a> (Required)</li>
         </ul>
-        </p>
 
-        <p>We will now look at the score header in more detail. If the example in the preceding &#8220;Hello World&#8221;
-            section gave you enough information, you may want to skip ahead to the next section that starts describing
-            music data.</p>
+        <p>我们现在将更详细地查看score header。 如果先前的 &#8220;Hello World&#8221;
+            例子 部分提供了足够的信息，您可能希望跳到开始描述music data的下一节。</p>
 
-        <h2 id="score-header">Score Header</h2>
+        <h2 id="score-header">Score Header（乐谱头信息）</h2>
 
-        <p>The score header contains some basic metadata about a musical score, such as the title and composer. It also
-            contains the &lt;part-list&gt;, which lists all the parts or instruments in a musical score.</p>
-        <p>As an example, take our MusicXML encoding of &#8220;Mut,&#8221; the 22nd song from Franz Schubert&#8217;s
-            song cycle <em>Winterreise</em>. Here is a sample score header for that work:</p>
+        <p>score header包含一些关于乐谱的基本元数据，如标题和作曲家。它还包含&lt;part-list&gt;， 它列出了乐谱中的所有部分或乐器。</p>
+        <p>举个例子，我们对弗朗茨·舒伯特（Franz Schubert）歌曲循环<em>Winterreise</em> 中第二十二手歌曲 &#8220;Mut,&#8221;进行编码。
+            以下是该作品的乐谱示例：</p>
 
         <p>
         <pre>  &lt;work&gt;
