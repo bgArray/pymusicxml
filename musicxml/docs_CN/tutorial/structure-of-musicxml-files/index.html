@@ -27,7 +27,7 @@
     <nav class="sidenav">
         <img src="../../static/images/back-cg-final.png"/>
         <ul>
-            <li><b><a href="../../"/>介绍</a></b></li>
+            <li><b><a href="../../"/>介绍</b></li>
             <li><b><a href="../introduction/">教程</a></b></li>
             <ul>
                 <li><a href="../hello-world/">"Hello World"（开始）</a></li>
@@ -211,69 +211,60 @@
       &lt;part-name&gt;Pianoforte.&lt;/part-name&gt;
     &lt;/score-part&gt;
   &lt;/part-list&gt;</pre>
-        </p>
 
-        <p>You see that this score header has all five of the possible top-level elements in the score header: the &lt;work&gt;,
-            &lt;movement-number,&gt; &lt;movement-title&gt;, &lt;identification&gt;, and &lt;part-list&gt;. Only the
-            part-list is required, all other elements are optional. Let&#8217;s look at each element in turn:</p>
+        <p>您可以看到，此score header包含score header中所有五个可能的top-level元素： &lt;work&gt;、&lt;movement-number&gt;、
+            &lt;movement-title&gt;、 &lt;identification&gt; 和 &lt;part-list&gt;。 只有part-list是必需的，所有其他元素都是可选的。
+            让我们依次查看每个元素：</p>
 
         <p>
         <pre>  &lt;work&gt;
     &lt;work-number&gt;D. 911&lt;/work-number&gt;
     &lt;work-title&gt;Winterreise&lt;/work-title&gt;
   &lt;/work&gt;</pre>
-        </p>
 
-        <p>In MusicXML, individual movements are usually represented as separate files. The <a
-                href="../../musicxml-reference/elements/work/">&lt;work&gt;</a> element is used to identify the larger
-            work of which this movement is a part. Schubert&#8217;s works are more commonly referred to via D. numbers
-            than opus numbers, so that is what we use in the <a href="../../musicxml-reference/elements/work-number/">&lt;work-number&gt;</a>
-            element; the <a href="../../musicxml-reference/elements/work-title/">&lt;work-title&gt;</a> contains the
-            name of the larger work. If you have all the movements in a work represented, you can use the <a
-                    href="../../musicxml-reference/elements/opus-reference/">&lt;opus&gt;</a> element to link to the
-            MusicXML <a href="../../opus-reference/elements/opus/">opus file</a> that in turn contains links to all the
-            movements in the work.</p>
+        <p>在MusicXML中，单个乐章（movements）通常表示为单独的文件。 <a
+                href="../../musicxml-reference/elements/work/">&lt;work&gt;</a> 元素用于识别该乐章所属的较大的音乐作品。
+            Schubert的音乐作品通常通过D.数字而不是作品数字来表示，因此这是我们在
+            <a href="../../musicxml-reference/elements/work-number/">&lt;work-number&gt;</a>
+            元素中使用的；<a href="../../musicxml-reference/elements/work-title/">&lt;work-title&gt;</a>包含了较大音乐作品的名称。
+            如果您有作品中的所有乐章，可以使用 <a
+                    href="../../musicxml-reference/elements/opus-reference/">&lt;opus&gt;</a>元素链接到MusicXML
+            <a href="../../opus-reference/elements/opus/">opus file</a>，该文件又包含指向作品中所有乐章的链接。</p>
 
         <p>
         <pre>  &lt;movement-number&gt;22&lt;/movement-number&gt;</pre>
-        </p>
 
-        <p><em>Winterreise</em> is a cycle of 24 songs. We use the <a
-                href="../../musicxml-reference/elements/movement-number/">&lt;movement-number&gt;</a> to identify that
-            &#8220;Mut&#8221; is the 22nd song in the cycle &#8211; it is not restricted to use for movements in a
-            symphony.</p>
+        <p><em>Winterreise</em>是24首歌曲的循环。 我们使用<a
+                href="../../musicxml-reference/elements/movement-number/">&lt;movement-number&gt;</a>以确定
+            &#8220;Mut&#8221; 是该周期中的第22首歌曲 &#8211; 它不限于用于交响乐中的乐章。</p>
 
         <p>
         <pre>  &lt;movement-title&gt;Mut&lt;/movement-title&gt;</pre>
-        </p>
 
-        <p>Similarly, we use the <a href="../../musicxml-reference/elements/movement-title/">&lt;movement-title&gt;</a>
-            element for the title of the individual song. If you have a single song that is not part of a collection,
-            you will usually put the title of the song in the &lt;movement-title&gt; element, and not use either the
-            &lt;work&gt; or &lt;movement-number&gt; elements.</p>
+        <p>类似地，我们使用<a href="../../musicxml-reference/elements/movement-title/">&lt;movement-title&gt;</a>
+            元素作为单个歌曲的标题。
+            如果您有一首歌曲不是集合的一部分，通常会将歌曲的标题放在
+            &lt;movement-title&gt; 元素中并且不使用
+            &lt;work&gt; 或 &lt;movement-number&gt; 元素。</p>
 
         <p>
         <pre>  &lt;identification&gt;
     &lt;creator type="composer"&gt;Franz Schubert&lt;/creator&gt;
     &lt;creator type="poet"&gt;Wilhelm Müller&lt;/creator&gt;</pre>
-        </p>
 
-        <p>The <a href="../../musicxml-reference/elements/identification/">&lt;identification&gt;</a> element contains
-            basic metadata elements based on the <a href="https://dublincore.org/specifications/dublin-core/">Dublin
-                Core</a>. In this song, as many others, there are two creators: in this case, the composer and the poet.
-            Therefore, we use two <a href="../../musicxml-reference/elements/creator/">&lt;creator&gt;</a> elements, and
-            distinguish their roles with the type attribute. The type attribute should still be used even for an
-            instrumental work with just one composer.</p>
+        <p><a href="../../musicxml-reference/elements/identification/">&lt;identification&gt;</a>元素包含基于
+            <a href="https://dublincore.org/specifications/dublin-core/">Dublin
+                Core</a>的基本元数据元素。
+                在这首歌中，和其他许多歌曲一样，有两位创作者：在本例中，作曲家和诗人。
+            因此，我们使用两个<a href="../../musicxml-reference/elements/creator/">&lt;creator&gt;</a>元素并用类型属性区分它们的角色。
+            即使对于只有一位作曲家的器乐作品，类型属性也应该使用。</p>
 
         <p>
         <pre>    &lt;rights&gt;Copyright © 2001 Recordare LLC&lt;/rights&gt;</pre>
-        </p>
 
-        <p>The <a href="../../musicxml-reference/elements/rights/">&lt;rights&gt;</a> element contains the copyright
-            notice. You may have multiple &lt;rights&gt; elements if multiple copyrights are involved, say for the words
-            and the music. As with the &lt;creator&gt; element, these can have type attributes to indicate what type of
-            copyright is involved. In this example, both the words and music to Mut are in the public domain, but this
-            element specifies a copyright to the electronic edition of the work.</p>
+        <p><a href="../../musicxml-reference/elements/rights/">&lt;rights&gt;</a>元素包含版权声明。如果涉及多个版权，
+            你可能会有多个&lt;rights&gt;元素，比如文字和音乐。 与&lt;creator&gt;元素一样， 这些元素可以具有类型属性，以指示涉及版权。
+            在这个例子中，Mut的单词和音乐都在公共领域，但这个元素指定了作品电子版的版权。</p>
 
         <p>
         <pre>    &lt;encoding&gt;
@@ -282,28 +273,23 @@
       &lt;software&gt;Finale 2002 for Windows&lt;/software&gt;
       &lt;encoding-description&gt;MusicXML 1.0 example&lt;/encoding-description&gt;
     &lt;/encoding&gt;</pre>
-        </p>
 
-        <p>The <a href="../../musicxml-reference/elements/encoding/">&lt;encoding&gt;</a> element contains information
-            about how the MusicXML file was created. Here we are using all four of the available sub-elements to
-            describe the encoding. You can have multiple instances of these elements, and they can appear in any order.
+        <p><a href="../../musicxml-reference/elements/encoding/">&lt;encoding&gt;</a>元素包含有关如何创建MusicXML文件的信息。
+            这里我们使用所有四个可用的子元素来描述编码。可以有这些元素的多个实例，并且它们可以以任何顺序出现。
         </p>
 
         <p>
         <pre>    &lt;source&gt;Based on Breitkopf &amp;amp; Härtel edition of 1895&lt;/source&gt;
   &lt;/identification&gt;</pre>
-        </p>
 
-        <p>Different editions of music will contain different musical information. In our case, we used the Dover
-            reprint of the Breitkopf &amp; Härtel edition of <em>Winterreise</em> as our starting point, correcting some
-            errors in that published score.</p>
+        <p>不同版本的音乐将包含不同的音乐信息 在我们的案例中，我们使用了Breitkopf &amp; Härtel 的版本的<em>Winterreise</em>
+            作为我们的出发点，纠正公布乐谱中的一些错误</p>
 
-        <p>The &lt;identification&gt; element also may contain a <a
-                href="../../musicxml-reference/elements/miscellaneous/">&lt;miscellaneous&gt;</a> element. This in turn
-            contains <a href="../../musicxml-reference/elements/miscellaneous-field/">&lt;miscellaneous-field&gt;</a>
-            elements, each with a name attribute. This can be helpful if your software contains some identification
-            information not present in the MusicXML schema that you want to preserve when saving and reading from
-            MusicXML.</p>
+        <p>&lt;identification&gt; 元素还可以包含<a
+                href="../../musicxml-reference/elements/miscellaneous/">&lt;miscellaneous&gt;</a> 元素。 这又包含
+            <a href="../../musicxml-reference/elements/miscellaneous-field/">&lt;miscellaneous-field&gt;</a>
+            元素， 每个都有一个name属性。 如果您的软件包含MusicXML模式中不存在的某些标识信息，
+            并且您希望在保存和读取MusicXML时保留这些信息，那么这将非常有用。</p>
 
         <p>
         <pre>  &lt;part-list&gt;
@@ -314,7 +300,6 @@
       &lt;part-name&gt;Pianoforte.&lt;/part-name&gt;
     &lt;/score-part&gt;
   &lt;/part-list&gt;</pre>
-        </p>
 
         <p>The <a href="../../musicxml-reference/elements/part-list/">&lt;part-list&gt;</a> is the one element in the
             score header that is required in all MusicXML scores. It is made up of a series of <a
@@ -362,7 +347,6 @@
                 elements, specifying the initial MIDI setup for each &lt;score-instrument&gt; within a part.
             </li>
         </ul>
-        </p>
 
         <p>Next: <a href="../midi-compatible-part/">The MIDI-Compatible Part of MusicXML</a>
 

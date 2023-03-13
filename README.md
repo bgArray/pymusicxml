@@ -4,6 +4,11 @@
 python的musicxml读写库。
 A python lib that's used to operate .musicxml files.
 
+#### 开发进度
+目前我们正在翻译musicxml的中文文档，以便于我们更好的理解musicxml的结构。
+
+clone下来后，可以在[musicxml/docs_CN/index.html](musicxml/docs_CN/index.html)目录下看到我们的翻译文档。
+
 #### 软件架构
 软件架构说明
 
