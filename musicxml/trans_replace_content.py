@@ -15,7 +15,7 @@ replace_dict = {
         '/">基本符号</a></li>',
     '/">Chord Symbols</a></li>':
         '/">和弦符号</a></li>',
-    '/"></a></li>':
+    '/">Tablature</a></li>':
         '/">指法图</a></li>',
     '/">Percussion</a></li>':
         '/">打击乐</a></li>',
