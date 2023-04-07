@@ -129,8 +129,26 @@ MusicXML由两种主要类型的元素组成。一组元素被用来表示一首
     &lt;/time&gt;
   &lt;/attributes&gt;</pre>
         <h3 id="divisions">Divisions</h3>
-        <p>Musical durations are commonly referred to as fractions: whole notes, half notes, quarter notes, and the like. While each musical note could have a fraction associated with it, MusicXML instead follows MIDI by specifying the number of divisions per quarter note at the start of a musical part, and then specifying note durations in terms of these divisions.</p>
-        <p>MusicXML allows the <a href="../../musicxml-reference/elements/divisions/">&lt;divisions&gt;</a> element value to change in the middle of a part. However for the broadest app compatibility, it is best to compute just one &lt;divisions&gt; value per part, placed at the beginning of the first measure. The divisions value of 24 in this example allows for both triplet eighth notes (being divisible by 3) and regular sixteenth notes (being divisible by 4).</p>
+<!--# import mido                                   -->
+<!--#                                               -->
+<!--# m = mido.midifiles.MidiFile("a.mid")          -->
+<!--# m.ticks_per_beat = 480                        -->
+        <p>音乐中，符号的持续时间通常被用分数表示：全音符、半音、四分音符等等。
+            虽然每个音符都可能有一个与之相关的分数，
+            MusicXML却没有同MIDI一样，在每个乐段开始之前标记每个四分音符的分段数(还有tpb：ticks_per_beat)，
+            然后根据这些分段指定音符持续时间。
+        </p>
+        <p>（译者补充：MIDI的计时方式较为灵活，但同时也比较复杂，这里可以自己查查MIDI是如何管理时间坐标的）</p>
+        <p>MusicXML允许 <a href="../../musicxml-reference/elements/divisions/">&lt;divisions&gt;</a> 元素的值
+            在一个Part中间被修改。
+            然而，为了获得最广泛的应用程序兼容性，最好每个Part只计算一个&lt;divisions&gt;，且将它至于第一小节的开始处。
+            在这个例子中，divisions的值被设为24意味着既允许八分三连音（可被三整除）和正十六分音符可以被4整除）。</p>
+        <p>（译者补充：24是表示一个四分音符被分成了多少份，意味着这是最小可能使用音符分量的一个最小公倍数。在这个事例中，
+        谱子里有八分音符和八分三连音（似乎并没有十六分音符），那实际上divisions的值就应该是[2,3]=6（如果是十六分音符的话，
+            [4,3]=12）。所以24实际上是允许32分音符出现的。其次，现在建议你直接往下翻到Duration这一节。这里面告诉我们，
+        一个八分三连音的持续时间是8，所以实际上就是8/24=1/3个四分音符，也就是八分三连音；也告诉我们一个八分音符的持续时间是12，
+        也就是12/24=1/2个四分音符，即八分音符）</p>
+        <p>译者存疑：chord的duration表达？</p>
         <h3 id="key">Key</h3>
         <p>Standard key signatures are represented like MIDI key signatures. The <a href="../../musicxml-reference/elements/fifths/">&lt;fifths&gt;</a> element specifies the number of flats or sharps in the key signature - negative for flats, positive for sharps. The fifths name indicates that this value represents the key signature's position on the circle of fifths. MusicXML uses the <a href="../../musicxml-reference/elements/mode/">&lt;mode&gt;</a> element to indicate major or minor key signatures.</p>
         <h3 id="time">Time</h3>
