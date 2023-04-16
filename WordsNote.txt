@@ -1,1 +1,4 @@
 octave  adj.八个一组的；【音乐】高八度音的
+chromatic  adj.半音(阶)的
+double  adj.低八度的
+diatonic  adj.自然音阶的

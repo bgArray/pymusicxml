@@ -155,7 +155,7 @@ MusicXML由两种主要类型的元素组成。一组元素被用来表示一首
             ——负降正升。 fifths这个标签的名字表示了该值表示的是调号在五度圈上的位置。
             MusicXML用<a href="../../musicxml-reference/elements/mode/">&lt;mode&gt;</a>
             元素区分大小调。</p>
-        <h3 id="time">Time</h3>
+        <h3 id="time">Time（拍）</h3>
         <p>在MusicXML中，歌曲的拍号比MIDI 1.0更加直接地表示出来。
             <a href="../../musicxml-reference/elements/beats/">&lt;beats&gt;</a> 元素描述了拍号的分子，
             <a href="../../musicxml-reference/elements/beat-type/">&lt;beat-type&gt;</a> 元素描述了拍号的分母。
@@ -164,18 +164,32 @@ MusicXML由两种主要类型的元素组成。一组元素被用来表示一首
             （译者补充：虽然我没怎么用这两个拍号，但似乎确实有许多不常见的拍号会出现，另外好像查资料的过程中还看到了：
              交替拍号（alternating time signatures）。）
         </p>
-        <h3 id="transpose">Transpose</h3>
-        <p>If you are writing a part for a transposing instrument, the transposition must be specified in MusicXML in order for the sound output to be correct. The <a href="../../musicxml-reference/elements/transpose/">&lt;transpose&gt;</a> element represents what must be added to the written pitch to get the correct sounding pitch.</p>
-        <p>The <a href="../../musicxml-reference/elements/chromatic/">&lt;chromatic&gt;</a> element, representing the number of chromatic steps to add to the written pitch, is the one required element. The <a href="../../musicxml-reference/elements/diatonic/">&lt;diatonic&gt;</a>, <a href="../../musicxml-reference/elements/octave-change/">&lt;octave-change&gt;</a>, and <a href="../../musicxml-reference/elements/double/">&lt;double&gt;</a> elements are optional elements.</p>
-        <p>Say we have a part written for a trumpet in B-flat. A written "C" on this part will sound as a B-flat on a piano. This transposition is one diatonic step down (C to B) and two chromatic half steps down (C to B to B-flat). In MusicXML it would be represented as:</p>
+        <h3 id="transpose">Transpose（移调）</h3>
+        <p>如果您正在为需要移调的乐器编写Part，则必须在MusicXML中指定Transpose，以便声音输出正确。
+            <a href="../../musicxml-reference/elements/transpose/">&lt;transpose&gt;</a>
+            元素表示必须添加到书写音高中才能获得正确的音高。</p>
+        <p><a href="../../musicxml-reference/elements/chromatic/">&lt;chromatic&gt;</a>元素，
+            表示要添加到书写音高的半音阶数，是必要的一个元素。
+            <a href="../../musicxml-reference/elements/diatonic/">&lt;diatonic（自然音阶）&gt;</a>、
+            <a href="../../musicxml-reference/elements/octave-change/">&lt;octave-change（八度改变）&gt;</a>和
+            <a href="../../musicxml-reference/elements/double/">&lt;double（低八度的）&gt;</a> 是可选元素。</p>
+        <p>假设我们有一部分是为降B小调写的。
+            这部分写的“C“在钢琴上听起来就像降B音。
+            这种转调是一种自然音阶下行（C-B），和两个半音阶下行（C-B-降B）。
+            在MusicXML中，它将表示为：</p>
         <p><pre xml:space="preserve">    &lt;transpose&gt;
       &lt;diatonic&gt;-1&lt;/diatonic&gt;
       &lt;chromatic&gt;-2&lt;/chromatic&gt;
     &lt;/transpose&gt;</pre>
-        <p>The &lt;diatonic&gt; element is not needed for correct MIDI output, but it helps get transposition notation correct and programs are encouraged to use it wherever possible.</p>
-        <p>The &lt;octave-change&gt; element is used when transpositions exceed an octave in either direction. The &lt;double&gt; element is used when the part should be doubled an octave lower or higher, as when a single part is used for both cello and string bass, or for both flute and piccolo.</p>
-        <h2 id="pitch">Pitch</h2>
-        <p>Pitch, duration, ties, and lyrics are all represented within the MusicXML <a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a> element. For example, the E-flat that starts bar 3 in the voice part has the following MIDI-compatible elements:</p>
+        <p>正确的MIDI输出不需要&lt;diatonic&gt;元素，
+            但它有助于获得正确的转调符号，并鼓励程序尽可能使用它。</p>
+        <p>当在任何一个方向上转调超过一个八度时，都会使用&lt;octave-change&gt;元素。
+            &lt;double&gt;元素用于当part应加倍到更低或更高的八度时，
+            例如当单个part用于大提琴和低音提琴，或用于长笛和短笛时。</p>
+        <h2 id="pitch">音调（Pitch）</h2>
+        <p>音高、持续时间（duration）、音调和歌词都在MusicXML
+            <a href="../../musicxml-reference/elements/note/">&lt;note&gt;</a> 元素中表示。
+            例如，人声部分中开始小节3的降E具有以下MIDI兼容元素：</p>
         <p><pre xml:space="preserve">  &lt;note&gt;
     &lt;pitch&gt;
       &lt;step&gt;E&lt;/step&gt;
